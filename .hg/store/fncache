@@ -1,0 +1,7 @@
+data/orm-2013/src/main/resources/META-INF/persistence.xml.i
+data/orm-2013/initialisation-pg.sql.i
+data/pom.xml.i
+data/.hgignore.i
+data/orm-2013/src/main/java/mif18/orm/Vin.java.i
+data/orm-2013/src/test/java/mif18/orm/MappingTest.java.i
+data/orm-2013/pom.xml.i
