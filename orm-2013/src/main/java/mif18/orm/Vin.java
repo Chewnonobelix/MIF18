@@ -5,9 +5,7 @@
 package mif18.orm;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
@@ -18,10 +16,15 @@ public class Vin implements Serializable {
     private int id;
     private String nom;
     private int annee;
-    private Producteur producteur;
-    private Appellation appellation;
+    
+    @JoinColumn(name="Producteur", referencedColumnName = "id")
+    private int producteur;
+    
+    @JoinColumn(name="Appellation", referencedColumnName = "id")
+    private int appellation;
+    private couleur m_couleur;
+            
     private enum couleur {
-        
         rouge,
         rose,
         blanc
@@ -51,22 +54,31 @@ public class Vin implements Serializable {
         this.annee = annee;
     }
 
-    public Producteur getProducteur() {
+    public int getProducteur() {
         return producteur;
     }
 
-    public void setProducteur(Producteur producteur) {
+    public void setProducteur(int producteur) {
         this.producteur = producteur;
     }
 
-    public Appellation getAppellation() {
+    public int getAppellation() {
         return appellation;
     }
 
-    public void setAppellation(Appellation appellation) {
+    public void setAppellation(int appellation) {
         this.appellation = appellation;
     }
 
+    public couleur getCouleur() {
+        return m_couleur;
+    }
+
+    public void setCouleur(couleur couleur) {
+        this.m_couleur = couleur;
+    }
+
+    
     // equals et hashcode on été générés automatiquement dans l'IDE
     @Override
     public int hashCode() {

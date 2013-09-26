@@ -5,19 +5,24 @@
 package mif18.orm;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  *
  * @author BJ
  */
+
+@Entity
 public class Appellation implements Serializable{
     
+    @Id
+    @GeneratedValue
     private int id;
+    
     private String nom;
-    private Region region;
+    
+    @JoinColumn(name="Region", referencedColumnName = "id")
+    private int region;
 
     
     public int getId() {
@@ -36,11 +41,11 @@ public class Appellation implements Serializable{
         this.nom = nom;
     }
 
-    public Region getRegion() {
+    public int getRegion() {
         return region;
     }
 
-    public void setRegion(Region region) {
+    public void setRegion(int region) {
         this.region = region;
     }
     
