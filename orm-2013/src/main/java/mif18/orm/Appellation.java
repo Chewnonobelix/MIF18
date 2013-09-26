@@ -17,7 +17,7 @@ public class Appellation implements Serializable{
     
     private int id;
     private String nom;
-    private int region;
+    private Region region;
 
     
     public int getId() {
@@ -36,11 +36,11 @@ public class Appellation implements Serializable{
         this.nom = nom;
     }
 
-    public int getRegion() {
+    public Region getRegion() {
         return region;
     }
 
-    public void setRegion(int region) {
+    public void setRegion(Region region) {
         this.region = region;
     }
     
