@@ -15,16 +15,15 @@ import javax.persistence.*;
 @Entity
 public class Appellation implements Serializable{
     
-    @Id
-    @GeneratedValue
     private int id;
     
     private String nom;
     
-    @JoinColumn(name="Region", referencedColumnName = "id")
     private int region;
 
     
+    @Id
+    @GeneratedValue
     public int getId() {
         return id;
     }
@@ -41,6 +40,7 @@ public class Appellation implements Serializable{
         this.nom = nom;
     }
 
+    @JoinColumn(name="Region", referencedColumnName = "id")
     public int getRegion() {
         return region;
     }

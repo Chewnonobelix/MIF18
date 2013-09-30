@@ -11,16 +11,12 @@ import javax.persistence.*;
 @Entity
 public class Vin implements Serializable {
 
-    @Id
-    @GeneratedValue
     private int id;
     private String nom;
     private int annee;
     
-    @JoinColumn(name="Producteur", referencedColumnName = "id")
     private int producteur;
-    
-    @JoinColumn(name="Appellation", referencedColumnName = "id")
+
     private int appellation;
     private couleur m_couleur;
             
@@ -30,6 +26,8 @@ public class Vin implements Serializable {
         blanc
     }
 
+    @Id
+    @GeneratedValue
     public int getId() {
         return id;
     }
@@ -54,6 +52,7 @@ public class Vin implements Serializable {
         this.annee = annee;
     }
 
+    @JoinColumn(name="Producteur", referencedColumnName = "id")
     public int getProducteur() {
         return producteur;
     }
@@ -62,6 +61,7 @@ public class Vin implements Serializable {
         this.producteur = producteur;
     }
 
+    @JoinColumn(name="Appellation", referencedColumnName = "id")
     public int getAppellation() {
         return appellation;
     }

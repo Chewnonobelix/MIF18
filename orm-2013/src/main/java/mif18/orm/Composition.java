@@ -12,9 +12,9 @@ import javax.persistence.*;
  * @author BJ
  */
 
+@Entity
 public class Composition implements Serializable{
     
-    @JoinColumn(name="Vin", referencedColumnName = "id")
     private int vin;
     
     private String variete;
@@ -49,10 +49,14 @@ public class Composition implements Serializable{
         return pourcentage;
     }
 
+    @Id
+    @Column(nullable = false)
     public String getVariete() {
         return variete;
     }
 
+    @Id
+    @JoinColumn(name="Vin", referencedColumnName = "id")
     public int getVin() {
         return vin;
     }  

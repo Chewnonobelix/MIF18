@@ -12,15 +12,18 @@ import javax.persistence.*;
  */
 
 @Entity
+@Table(
+        uniqueConstraints = @UniqueConstraint(columnNames = {"nom", "pays"})
+)
 public class Region {
  
-    @Id
-    @GeneratedValue
     private int id;
     
     private String nom;
     private String pays;
 
+    @Id
+    @GeneratedValue
     public int getId() {
         return id;
     }

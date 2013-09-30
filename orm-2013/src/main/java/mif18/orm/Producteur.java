@@ -15,12 +15,12 @@ import javax.persistence.*;
 @Entity
 public class Producteur implements Serializable{
     
-    @Id
-    @GeneratedValue
     private int id;
     
     private String nom;
 
+    @Id
+    @GeneratedValue
     public int getId() {
         return id;
     }
