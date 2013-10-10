@@ -3,4 +3,5 @@ mif18\orm\Vin.class
 mif18\orm\Appellation.class
 mif18\orm\Composition.class
 mif18\orm\Vin$couleur.class
+mif18\orm\IdComposition.class
 mif18\orm\Producteur.class

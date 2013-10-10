@@ -12,17 +12,26 @@ import javax.persistence.*;
  * @author BJ
  */
 
-@Entity
+//@Entity
 public class Composition implements Serializable{
     
-    private int vin;
-    
-    private String variete;
+    private IdComposition m_id;
     private int pourcentage;
 
     public Composition()
     {
        setPourcentage(0);
+    }
+
+    public void setId(IdComposition id) 
+    {
+        this.m_id = id;
+    }
+
+    @Id
+    public IdComposition getId() 
+    {
+        return m_id;
     }
     
     public void setPourcentage(int pourcentage) {
@@ -37,27 +46,9 @@ public class Composition implements Serializable{
         }
     }
 
-    public void setVariete(String variete) {
-        this.variete = variete;
-    }
-
-    public void setVin(int vin) {
-        this.vin = vin;
-    }
 
     public int getPourcentage() {
         return pourcentage;
     }
 
-    @Id
-    @Column(nullable = false)
-    public String getVariete() {
-        return variete;
-    }
-
-    @Id
-    @JoinColumn(name="Vin", referencedColumnName = "id")
-    public int getVin() {
-        return vin;
-    }  
 }

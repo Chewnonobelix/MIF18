@@ -12,7 +12,7 @@ import javax.persistence.*;
  * @author BJ
  */
 
-@Entity
+//@Entity
 public class Appellation implements Serializable{
     
     private int id;

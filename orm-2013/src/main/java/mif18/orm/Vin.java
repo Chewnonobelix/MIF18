@@ -8,7 +8,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 
-@Entity
+//@Entity
 public class Vin implements Serializable {
 
     private int id;
