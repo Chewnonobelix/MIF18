@@ -12,8 +12,9 @@ import javax.persistence.*;
  * @author BJ
  */
 
-//@Entity
+@Entity
 public class Composition implements Serializable{
+    
     
     private IdComposition m_id;
     private int pourcentage;
@@ -28,7 +29,7 @@ public class Composition implements Serializable{
         this.m_id = id;
     }
 
-    @Id
+    @EmbeddedId
     public IdComposition getId() 
     {
         return m_id;

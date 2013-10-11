@@ -4,20 +4,20 @@
  */
 package mif18.orm;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
  *
  * @author Chewnonobelix
  */
-
-public class IdComposition 
+@Embeddable
+public class IdComposition implements Serializable 
 {
-    @JoinColumn(name = "Vin", referencedColumnName = "id")
-    private Vin m_vin;
-    
-    @Column(nullable = false)
-    private String m_variete;
+    private int vin;
+
+    //@Column(nullable = false)
+    private String variete;
 
     public IdComposition()
     {
@@ -25,23 +25,23 @@ public class IdComposition
 
     public String getVariete() 
     {
-        return m_variete;
+        return variete;
     }
 
-    public Vin getVin() 
+    @OneToOne
+    @JoinColumn(name = "Vin")
+    public int getVin() 
     {
-        return m_vin;
+        return vin;
     }
 
     public void setVariete(String variete) 
     {
-        m_variete = variete;
+        this.variete = variete;
     }
 
-    public void setVin(Vin vin) 
+    public void setVin(int vin) 
     {
-        m_vin = vin;
+        this.vin = vin;
     }
-
-    
 }

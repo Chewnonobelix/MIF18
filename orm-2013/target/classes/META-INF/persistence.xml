@@ -3,7 +3,7 @@
   <persistence-unit name="pu" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>mif18.orm.Appellation</class>
-    <!--<class>mif18.orm.Composition</class>-->
+    <class>mif18.orm.Composition</class>
     <class>mif18.orm.Producteur</class>
     <class>mif18.orm.Region</class>
     <class>mif18.orm.Vin</class>

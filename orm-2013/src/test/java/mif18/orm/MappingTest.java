@@ -37,7 +37,7 @@ public class MappingTest{
         
     }
     
-    @Test
+    /*@Test
     public void chargeRegion()
     {
         /*Region r = new Region();
@@ -45,7 +45,7 @@ public class MappingTest{
         r.setNom("Côte de Nuits");
         r.setPays("France");
         em.persist(r);
-        em.getTransaction().commit();*/
+        em.getTransaction().commit();
         
         assertNotNull(em.find(Region.class, 1));
         assertNotNull(em.find(Region.class, 2));
@@ -88,9 +88,9 @@ public class MappingTest{
         assertNotNull(em.find(Vin.class, 6));
         assertNotNull(em.find(Vin.class, 7));
         assertNotNull(em.find(Vin.class, 8));     
-     }
+     }*/
     
-    /*@Test
+    @Test
     public void chargeComposition()
     {
         assertNotNull(em.find(Composition.class, 1));
@@ -106,5 +106,5 @@ public class MappingTest{
         assertNotNull(em.find(Composition.class, 11));
         assertNotNull(em.find(Composition.class, 12));
         assertNotNull(em.find(Composition.class, 13));    
-    }*/
+    }
 }
