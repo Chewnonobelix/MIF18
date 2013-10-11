@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Table(
         uniqueConstraints = @UniqueConstraint(columnNames = {"nom", "pays"})
 )
-public class Region {
+public class Region implements Serializable {
  
     private int id;
     

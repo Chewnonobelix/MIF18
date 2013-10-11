@@ -37,42 +37,74 @@ public class MappingTest{
         
     }
     
-    //@org.junit.Test
-    /*public void chargeVin() {
-        Vin v = new Vin();
-        assertNotNull(em.find(Vin.class, 1));
-        //assertEquals(true, true);
-    }*/
-    
     @Test
     public void chargeRegion()
     {
         /*Region r = new Region();
         em.getTransaction().begin();
-        r.setNom("Côte de nuits");
+        r.setNom("Côte de Nuits");
         r.setPays("France");
         em.persist(r);
-        em.getTransaction().commit();
-        r = new Region();
-        em.getTransaction().begin();
-        r.setNom("Côte de Beaune");
-        r.setPays("France");
-        em.persist(r);
-        em.getTransaction().commit();
-        r = new Region();
-        em.getTransaction().begin();
-        r.setNom("Sauternes");
-        r.setPays("France");
-        em.persist(r);
-        em.getTransaction().commit();
-        r = new Region();
-        em.getTransaction().begin();
-        r.setNom("Libournais");
-        r.setPays("France");
-        em.persist(r);
-        em.getTransaction().commit(); */
+        em.getTransaction().commit();*/
         
-        assertNotNull(em.find(Region.class, 35));
-        //assertEquals(true, true);
+        assertNotNull(em.find(Region.class, 1));
+        assertNotNull(em.find(Region.class, 2));
+        assertNotNull(em.find(Region.class, 3));
+        assertNotNull(em.find(Region.class, 4));
     }
+    
+    @Test
+    public void chargeProducteur()
+    {
+        assertNotNull(em.find(Producteur.class, 1));
+        assertNotNull(em.find(Producteur.class, 2));
+        assertNotNull(em.find(Producteur.class, 3));
+        assertNotNull(em.find(Producteur.class, 4));
+        assertNotNull(em.find(Producteur.class, 5));
+        assertNotNull(em.find(Producteur.class, 6));
+        assertNotNull(em.find(Producteur.class, 7));
+        assertNotNull(em.find(Producteur.class, 8));     
+    }
+    
+    @Test
+    public void chargeAppellation()
+    {
+        assertNotNull(em.find(Appellation.class, 1));
+        assertNotNull(em.find(Appellation.class, 2));
+        assertNotNull(em.find(Appellation.class, 3));
+        assertNotNull(em.find(Appellation.class, 4));
+        assertNotNull(em.find(Appellation.class, 5));
+        assertNotNull(em.find(Appellation.class, 6));
+    }
+    
+    @Test
+    public void chargeVin() 
+    {
+        assertNotNull(em.find(Vin.class, 1));
+        assertNotNull(em.find(Vin.class, 2));
+        //assertNotNull(em.find(Vin.class, 3));
+        assertNotNull(em.find(Vin.class, 4));
+        assertNotNull(em.find(Vin.class, 5));
+        assertNotNull(em.find(Vin.class, 6));
+        assertNotNull(em.find(Vin.class, 7));
+        assertNotNull(em.find(Vin.class, 8));     
+     }
+    
+    /*@Test
+    public void chargeComposition()
+    {
+        assertNotNull(em.find(Composition.class, 1));
+        assertNotNull(em.find(Composition.class, 2));
+        assertNotNull(em.find(Composition.class, 3));
+        assertNotNull(em.find(Composition.class, 4));
+        assertNotNull(em.find(Composition.class, 5));
+        assertNotNull(em.find(Composition.class, 6));
+        assertNotNull(em.find(Composition.class, 7));
+        assertNotNull(em.find(Composition.class, 8));
+        assertNotNull(em.find(Composition.class, 9));
+        assertNotNull(em.find(Composition.class, 10));
+        assertNotNull(em.find(Composition.class, 11));
+        assertNotNull(em.find(Composition.class, 12));
+        assertNotNull(em.find(Composition.class, 13));    
+    }*/
 }

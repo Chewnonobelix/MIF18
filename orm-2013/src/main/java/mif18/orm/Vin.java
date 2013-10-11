@@ -8,7 +8,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 
-//@Entity
+@Entity
 public class Vin implements Serializable {
 
     private int id;
@@ -17,13 +17,23 @@ public class Vin implements Serializable {
     
     private int producteur;
 
+    @Column(nullable = true)
     private int appellation;
-    private couleur m_couleur;
+    private String m_couleur;
             
-    private enum couleur {
-        rouge,
-        rose,
-        blanc
+    public enum couleur {
+        rouge("rouge"),
+        rose("rose"),
+        blanc("blanc");
+        
+        private String m_name = "";
+        
+        couleur(String name)
+        {
+            m_name = name;
+        }
+        
+        
     }
 
     @Id
@@ -61,7 +71,7 @@ public class Vin implements Serializable {
         this.producteur = producteur;
     }
 
-    @JoinColumn(name="Appellation", referencedColumnName = "id")
+    //@JoinColumn(name="Appellation", referencedColumnName = "id")
     public int getAppellation() {
         return appellation;
     }
@@ -70,11 +80,11 @@ public class Vin implements Serializable {
         this.appellation = appellation;
     }
 
-    public couleur getCouleur() {
+    public String getCouleur() {
         return m_couleur;
     }
 
-    public void setCouleur(couleur couleur) {
+    public void setCouleur(String couleur) {
         this.m_couleur = couleur;
     }
 
