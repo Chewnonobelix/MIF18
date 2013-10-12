@@ -5,31 +5,27 @@
 package mif18.orm;
 
 import java.io.Serializable;
-import javax.persistence.*;
 
 /**
  *
  * @author Chewnonobelix
  */
-@Embeddable
+
 public class IdComposition implements Serializable 
 {
-    private int vin;
+        private int vin;
 
-    //@Column(nullable = false)
-    private String variete;
+        private String variete;
 
     public IdComposition()
     {
     }
 
-    public String getVariete() 
+   public String getVariete() 
     {
         return variete;
     }
 
-    @OneToOne
-    @JoinColumn(name = "Vin")
     public int getVin() 
     {
         return vin;
@@ -44,4 +40,20 @@ public class IdComposition implements Serializable
     {
         this.vin = vin;
     }
+
+    @Override
+    public boolean equals(Object obj) 
+    {
+        IdComposition osiris = (IdComposition) obj;
+        return ((getVin() == osiris.getVin()) &&
+                (getVariete().equals(osiris.getVariete()))); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int hashCode() 
+    {
+        return (getVin() + getVariete().hashCode()); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="2.436" errors="2" skipped="0" tests="2" name="mif18.orm.MappingTest">
+<testsuite failures="0" time="4.011" errors="0" skipped="0" tests="6" name="mif18.orm.MappingTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_25\jre\bin"/>
@@ -61,126 +61,10 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.007" classname="mif18.orm.MappingTest" name="chargeComposition">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at org.hibernate.cfg.Configuration.processFkSecondPassInOrder(Configuration.java:1456)
-	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1386)
-	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1777)
-	at org.hibernate.ejb.EntityManagerFactoryImpl.&lt;init&gt;(EntityManagerFactoryImpl.java:96)
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914)
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:899)
-	at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:59)
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:63)
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:47)
-	at mif18.orm.MappingTest.&lt;init&gt;(MappingTest.java:20)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:195)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:244)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:241)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-    <system-err>oct. 11, 2013 2:07:13 PM org.hibernate.annotations.common.Version &lt;clinit&gt;
-INFO: HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
-oct. 11, 2013 2:07:13 PM org.hibernate.Version logVersion
-INFO: HHH000412: Hibernate Core {4.2.5.Final}
-oct. 11, 2013 2:07:13 PM org.hibernate.cfg.Environment &lt;clinit&gt;
-INFO: HHH000206: hibernate.properties not found
-oct. 11, 2013 2:07:13 PM org.hibernate.cfg.Environment buildBytecodeProvider
-INFO: HHH000021: Bytecode provider name : javassist
-oct. 11, 2013 2:07:13 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-oct. 11, 2013 2:07:13 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000115: Hibernate connection pool size: 20
-oct. 11, 2013 2:07:13 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000006: Autocommit mode: true
-oct. 11, 2013 2:07:13 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/MIF18_TP1]
-oct. 11, 2013 2:07:13 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000046: Connection properties: {user=etudiant, password=****, autocommit=true, release_mode=auto}
-oct. 11, 2013 2:07:14 PM org.hibernate.dialect.Dialect &lt;init&gt;
-INFO: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-oct. 11, 2013 2:07:14 PM org.hibernate.engine.jdbc.internal.LobCreatorBuilder useContextualLobCreation
-INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
-</system-err>
-  </testcase>
-  <testcase time="0.021" classname="mif18.orm.MappingTest" name="verifieMapping">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at org.hibernate.cfg.Configuration.processFkSecondPassInOrder(Configuration.java:1456)
-	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1386)
-	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1777)
-	at org.hibernate.ejb.EntityManagerFactoryImpl.&lt;init&gt;(EntityManagerFactoryImpl.java:96)
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914)
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:899)
-	at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:59)
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:63)
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:47)
-	at mif18.orm.MappingTest.&lt;init&gt;(MappingTest.java:20)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
-	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:195)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:244)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:241)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:606)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-    <system-err>oct. 11, 2013 2:07:14 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-oct. 11, 2013 2:07:14 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000115: Hibernate connection pool size: 20
-oct. 11, 2013 2:07:14 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000006: Autocommit mode: true
-oct. 11, 2013 2:07:14 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000401: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/MIF18_TP1]
-oct. 11, 2013 2:07:14 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-INFO: HHH000046: Connection properties: {user=etudiant, password=****, autocommit=true, release_mode=auto}
-oct. 11, 2013 2:07:15 PM org.hibernate.dialect.Dialect &lt;init&gt;
-INFO: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-oct. 11, 2013 2:07:15 PM org.hibernate.engine.jdbc.internal.LobCreatorBuilder useContextualLobCreation
-INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
-</system-err>
-  </testcase>
+  <testcase time="0.047" classname="mif18.orm.MappingTest" name="chargeComposition"/>
+  <testcase time="0.016" classname="mif18.orm.MappingTest" name="chargeAppellation"/>
+  <testcase time="0.063" classname="mif18.orm.MappingTest" name="chargeProducteur"/>
+  <testcase time="0" classname="mif18.orm.MappingTest" name="chargeRegion"/>
+  <testcase time="0" classname="mif18.orm.MappingTest" name="chargeVin"/>
+  <testcase time="0" classname="mif18.orm.MappingTest" name="verifieMapping"/>
 </testsuite>

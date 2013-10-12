@@ -13,29 +13,19 @@ import javax.persistence.*;
  */
 
 @Entity
+@IdClass(mif18.orm.IdComposition.class)
 public class Composition implements Serializable{
     
+    private int vin;
+    private String variete;
     
-    private IdComposition m_id;
-    private int pourcentage;
+    private Integer pourcentage;
 
     public Composition()
     {
-       setPourcentage(0);
-    }
-
-    public void setId(IdComposition id) 
-    {
-        this.m_id = id;
-    }
-
-    @EmbeddedId
-    public IdComposition getId() 
-    {
-        return m_id;
     }
     
-    public void setPourcentage(int pourcentage) {
+    public void setPourcentage(Integer pourcentage) {
         
         if(pourcentage >= 0 || pourcentage <= 100)
         {
@@ -47,9 +37,30 @@ public class Composition implements Serializable{
         }
     }
 
-
-    public int getPourcentage() {
+    @Column(name = "pourcentage", nullable = true)
+    public Integer getPourcentage() {
         return pourcentage;
     }
 
+    public void setVin(int vin) {
+        this.vin = vin;
+    }
+
+    public void setVariete(String variete) {
+        this.variete = variete;
+    }
+
+    
+    @Id
+    @JoinColumn(name = "Vin", referencedColumnName = "id")
+    public int getVin() {
+        return vin;
+    }
+
+    @Column(nullable = true)
+    public String getVariete() {
+        return variete;
+    }
+
+    
 }
