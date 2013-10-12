@@ -23,7 +23,7 @@ public class Region implements Serializable {
     private String pays;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue        // "id" est une primary key (et not null)
     public int getId() {
         return id;
     }

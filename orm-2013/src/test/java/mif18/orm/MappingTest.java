@@ -31,21 +31,16 @@ public class MappingTest{
 
     @Test
     public void verifieMapping() throws Exception{
-        //em = Persistence.createEntityManagerFactory("MIF18_TP1").createEntityManager();
-        // Ne fait rien: est juste là pour vérifier que l'entity manager a pu
+       // Ne fait rien: est juste là pour vérifier que l'entity manager a pu
         // être créé et donc que le mapping est cohérent
         
     }
     
+    // Tous les tests qui suivent vérifient si les données de la base sont conformes
+    
     @Test
     public void chargeRegion()
     {
-        /*Region r = new Region();
-        em.getTransaction().begin();
-        r.setNom("Côte de Nuits");
-        r.setPays("France");
-        em.persist(r);
-        em.getTransaction().commit();*/
         
         assertNotNull(em.find(Region.class, 1));
         assertNotNull(em.find(Region.class, 2));
@@ -63,7 +58,7 @@ public class MappingTest{
         assertNotNull(em.find(Producteur.class, 5));
         assertNotNull(em.find(Producteur.class, 6));
         assertNotNull(em.find(Producteur.class, 7));
-        assertNotNull(em.find(Producteur.class, 8));     
+        assertNotNull(em.find(Producteur.class, 8));
     }
     
     @Test
@@ -82,7 +77,7 @@ public class MappingTest{
     {
         assertNotNull(em.find(Vin.class, 1));
         assertNotNull(em.find(Vin.class, 2));
-        //assertNotNull(em.find(Vin.class, 3));
+        assertNotNull(em.find(Vin.class, 3));
         assertNotNull(em.find(Vin.class, 4));
         assertNotNull(em.find(Vin.class, 5));
         assertNotNull(em.find(Vin.class, 6));
@@ -90,21 +85,48 @@ public class MappingTest{
         assertNotNull(em.find(Vin.class, 8));     
      }
     
-    /*@Test
+    @Test
     public void chargeComposition()
     {
-        assertNotNull(em.find(Composition.class, 1));
-        assertNotNull(em.find(Composition.class, 2));
-        assertNotNull(em.find(Composition.class, 3));
-        assertNotNull(em.find(Composition.class, 4));
-        assertNotNull(em.find(Composition.class, 5));
-        assertNotNull(em.find(Composition.class, 6));
-        assertNotNull(em.find(Composition.class, 7));
-        assertNotNull(em.find(Composition.class, 8));
-        assertNotNull(em.find(Composition.class, 9));
-        assertNotNull(em.find(Composition.class, 10));
-        assertNotNull(em.find(Composition.class, 11));
-        assertNotNull(em.find(Composition.class, 12));
-        assertNotNull(em.find(Composition.class, 13));    
-    }*/
+        IdComposition isis = new IdComposition();
+        isis.setVin(1);
+        isis.setVariete("Pinot Noir");
+        assertNotNull(em.find(Composition.class, isis));
+        isis.setVin(2);
+        isis.setVariete("Pinot Noir");
+        assertNotNull(em.find(Composition.class, isis));
+        isis.setVin(3);
+        isis.setVariete("Pinot Noir");
+        assertNotNull(em.find(Composition.class, isis));
+        isis.setVin(4);
+        isis.setVariete("Pinot Noir");
+        assertNotNull(em.find(Composition.class, isis));
+        isis.setVin(5);
+        isis.setVariete("Chardonnay");
+        assertNotNull(em.find(Composition.class, isis));
+        isis.setVin(6);
+        isis.setVariete("Muscadelle");
+        assertNotNull(em.find(Composition.class, isis));
+        isis.setVin(6);
+        isis.setVariete("Sauvignon blanc");
+        assertNotNull(em.find(Composition.class, isis));
+        isis.setVin(6);
+        isis.setVariete("Sémillon");
+        assertNotNull(em.find(Composition.class, isis));
+        isis.setVin(7);
+        isis.setVariete("Muscadelle");
+        assertNotNull(em.find(Composition.class, isis));
+        isis.setVin(7);
+        isis.setVariete("Sauvignon blanc");
+        assertNotNull(em.find(Composition.class, isis));
+        isis.setVin(7);
+        isis.setVariete("Sémillon");
+        assertNotNull(em.find(Composition.class, isis));
+        isis.setVin(8);
+        isis.setVariete("Merlot");
+        assertNotNull(em.find(Composition.class, isis));
+        isis.setVin(8);
+        isis.setVariete("Cabernet Franc");
+        assertNotNull(em.find(Composition.class, isis));    
+    }
 }

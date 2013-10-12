@@ -17,9 +17,8 @@ public class Vin implements Serializable {
     
     private int producteur;
 
-    @Column(nullable = true)
-    private int appellation;
-    private String m_couleur;
+    private Integer appellation;
+    private couleur m_couleur;
             
     public enum couleur {
         rouge("rouge"),
@@ -37,7 +36,7 @@ public class Vin implements Serializable {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue      // "id" est une primary key (et not null)
     public int getId() {
         return id;
     }
@@ -62,8 +61,10 @@ public class Vin implements Serializable {
         this.annee = annee;
     }
 
-    @JoinColumn(name="Producteur", referencedColumnName = "id")
-    public int getProducteur() {
+    
+    
+    @JoinColumn(name="Producteur", referencedColumnName = "id") // le paramètre "producteur" de Vin est une clé étrangère
+    public int getProducteur() {                                // sur le paramètre "id" de Producteur
         return producteur;
     }
 
@@ -71,20 +72,21 @@ public class Vin implements Serializable {
         this.producteur = producteur;
     }
 
-    //@JoinColumn(name="Appellation", referencedColumnName = "id")
-    public int getAppellation() {
+    @Column(nullable = true)         // Un vin n'a pas forcément d'appellation
+    public Integer getAppellation() {
         return appellation;
     }
 
-    public void setAppellation(int appellation) {
+    public void setAppellation(Integer appellation) {
         this.appellation = appellation;
     }
 
-    public String getCouleur() {
+    @Enumerated(EnumType.STRING)
+    public couleur getCouleur() {
         return m_couleur;
     }
 
-    public void setCouleur(String couleur) {
+    public void setCouleur(couleur couleur) {
         this.m_couleur = couleur;
     }
 

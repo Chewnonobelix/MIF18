@@ -12,43 +12,53 @@ import javax.persistence.*;
  * @author BJ
  */
 
-//@Entity
+@Entity                                 // "variete" et "vin" sont tous les deux clés primaires
+@IdClass(mif18.orm.IdComposition.class) // une classe de clés primaires (idComposition) a donc été créée
 public class Composition implements Serializable{
     
-    private IdComposition m_id;
-    private int pourcentage;
+    private int vin;
+    private String variete;
+    
+    private Integer pourcentage;
 
     public Composition()
     {
-       setPourcentage(0);
-    }
-
-    public void setId(IdComposition id) 
-    {
-        this.m_id = id;
-    }
-
-    @Id
-    public IdComposition getId() 
-    {
-        return m_id;
     }
     
-    public void setPourcentage(int pourcentage) {
+    public void setPourcentage(Integer pourcentage) {
         
-        if(pourcentage >= 0 || pourcentage <= 100)
+        if(pourcentage == null || (pourcentage.compareTo(0) > 0 && pourcentage.compareTo(100) < 0))
         {
             this.pourcentage = pourcentage;
         }
-        else
-        {
-            //Exception
-        }
+        
     }
 
-
-    public int getPourcentage() {
+    @Column(nullable = true)          // le paramètre "pourcentage" peut être à null
+    public Integer getPourcentage() {
         return pourcentage;
     }
 
+    public void setVin(int vin) {
+        this.vin = vin;
+    }
+
+    public void setVariete(String variete) {
+        this.variete = variete;
+    }
+
+    
+    @Id
+    @JoinColumn(name = "Vin", referencedColumnName = "id", nullable = false) // le paramètre "Vin" (non null) de composition est une clé étrangère
+    public int getVin() {                                                   // sur le paramètre "id" de Vin
+        return vin;
+    }
+
+    @Id
+    @Column(nullable = false)          // le paramètre "variete" ne peut être à null
+    public String getVariete() {
+        return variete;
+    }
+
+    
 }

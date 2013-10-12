@@ -20,7 +20,7 @@ public class Producteur implements Serializable{
     private String nom;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue          // "id" est une primary key (et not null)
     public int getId() {
         return id;
     }

@@ -22,8 +22,9 @@ public class Appellation implements Serializable{
     private int region;
 
     
+    
     @Id
-    @GeneratedValue
+    @GeneratedValue                 // "id" est une primary key (et not null)
     public int getId() {
         return id;
     }
@@ -40,8 +41,8 @@ public class Appellation implements Serializable{
         this.nom = nom;
     }
 
-    @JoinColumn(name="Region", referencedColumnName = "id")
-    public int getRegion() {
+    @JoinColumn(name="Region", referencedColumnName = "id") // le paramètre "region" de Appellation est une clé étrangère
+    public int getRegion() {                                // sur le paramètre "id" de Region
         return region;
     }
 

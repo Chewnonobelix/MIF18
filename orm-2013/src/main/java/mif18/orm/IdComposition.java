@@ -4,44 +4,58 @@
  */
 package mif18.orm;
 
-import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  *
  * @author Chewnonobelix
  */
 
-public class IdComposition 
+// Cette classe est utilisée par la classe composition car composition dispose de deux clés primaires
+
+public class IdComposition implements Serializable 
 {
-    @JoinColumn(name = "Vin", referencedColumnName = "id")
-    private Vin m_vin;
-    
-    @Column(nullable = false)
-    private String m_variete;
+        private int vin;
+
+        private String variete;
 
     public IdComposition()
     {
     }
 
-    public String getVariete() 
+   public String getVariete() 
     {
-        return m_variete;
+        return variete;
     }
 
-    public Vin getVin() 
+    public int getVin() 
     {
-        return m_vin;
+        return vin;
     }
 
     public void setVariete(String variete) 
     {
-        m_variete = variete;
+        this.variete = variete;
     }
 
-    public void setVin(Vin vin) 
+    public void setVin(int vin) 
     {
-        m_vin = vin;
+        this.vin = vin;
     }
 
+    @Override
+    public boolean equals(Object obj) 
+    {
+        IdComposition osiris = (IdComposition) obj;
+        return ((getVin() == osiris.getVin()) &&
+                (getVariete().equals(osiris.getVariete())));
+    }
+
+    @Override
+    public int hashCode() 
+    {
+        return (getVin() + getVariete().hashCode());
+    }
+    
     
 }
