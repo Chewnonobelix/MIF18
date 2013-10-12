@@ -21,6 +21,7 @@ public class Producteur implements Serializable{
 
     @Id
     @GeneratedValue
+    //@OneToOne
     public int getId() {
         return id;
     }

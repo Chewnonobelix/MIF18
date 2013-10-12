@@ -24,6 +24,7 @@ public class Region implements Serializable {
 
     @Id
     @GeneratedValue
+    //@OneToMany
     public int getId() {
         return id;
     }

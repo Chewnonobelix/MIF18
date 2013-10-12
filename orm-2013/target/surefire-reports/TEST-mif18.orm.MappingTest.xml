@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="4.011" errors="0" skipped="0" tests="6" name="mif18.orm.MappingTest">
+<testsuite failures="0" time="3.969" errors="0" skipped="0" tests="6" name="mif18.orm.MappingTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_25\jre\bin"/>
@@ -61,10 +61,10 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.047" classname="mif18.orm.MappingTest" name="chargeComposition"/>
-  <testcase time="0.016" classname="mif18.orm.MappingTest" name="chargeAppellation"/>
-  <testcase time="0.063" classname="mif18.orm.MappingTest" name="chargeProducteur"/>
-  <testcase time="0" classname="mif18.orm.MappingTest" name="chargeRegion"/>
-  <testcase time="0" classname="mif18.orm.MappingTest" name="chargeVin"/>
+  <testcase time="0.062" classname="mif18.orm.MappingTest" name="chargeComposition"/>
+  <testcase time="0" classname="mif18.orm.MappingTest" name="chargeAppellation"/>
+  <testcase time="0.047" classname="mif18.orm.MappingTest" name="chargeProducteur"/>
+  <testcase time="0.047" classname="mif18.orm.MappingTest" name="chargeRegion"/>
+  <testcase time="0.016" classname="mif18.orm.MappingTest" name="chargeVin"/>
   <testcase time="0" classname="mif18.orm.MappingTest" name="verifieMapping"/>
 </testsuite>

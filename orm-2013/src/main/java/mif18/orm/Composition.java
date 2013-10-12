@@ -27,7 +27,7 @@ public class Composition implements Serializable{
     
     public void setPourcentage(Integer pourcentage) {
         
-        if(pourcentage >= 0 || pourcentage <= 100)
+        if(pourcentage == null || (pourcentage.compareTo(0) > 0 && pourcentage.compareTo(100) < 0))
         {
             this.pourcentage = pourcentage;
         }
@@ -37,7 +37,7 @@ public class Composition implements Serializable{
         }
     }
 
-    @Column(name = "pourcentage", nullable = true)
+    @Column(nullable = true)
     public Integer getPourcentage() {
         return pourcentage;
     }
@@ -53,11 +53,12 @@ public class Composition implements Serializable{
     
     @Id
     @JoinColumn(name = "Vin", referencedColumnName = "id")
+    //@ManyToOne
     public int getVin() {
         return vin;
     }
 
-    @Column(nullable = true)
+    @Id
     public String getVariete() {
         return variete;
     }

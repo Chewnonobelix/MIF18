@@ -24,6 +24,7 @@ public class Appellation implements Serializable{
     
     @Id
     @GeneratedValue
+    //@OneToMany
     public int getId() {
         return id;
     }
@@ -41,6 +42,7 @@ public class Appellation implements Serializable{
     }
 
     @JoinColumn(name="Region", referencedColumnName = "id")
+    //@ManyToOne
     public int getRegion() {
         return region;
     }

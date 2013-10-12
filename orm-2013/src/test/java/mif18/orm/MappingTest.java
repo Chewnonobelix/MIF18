@@ -81,7 +81,7 @@ public class MappingTest{
     {
         assertNotNull(em.find(Vin.class, 1));
         assertNotNull(em.find(Vin.class, 2));
-        //assertNotNull(em.find(Vin.class, 3));
+        assertNotNull(em.find(Vin.class, 3));
         assertNotNull(em.find(Vin.class, 4));
         assertNotNull(em.find(Vin.class, 5));
         assertNotNull(em.find(Vin.class, 6));
@@ -110,13 +110,13 @@ public class MappingTest{
         assertNotNull(em.find(Composition.class, isis));
         isis.setVin(6);
         isis.setVariete("Muscadelle");
-        //assertNotNull(em.find(Composition.class, isis));
+        assertNotNull(em.find(Composition.class, isis));
         isis.setVin(6);
         isis.setVariete("Sauvignon blanc");
-        //assertNotNull(em.find(Composition.class, isis));
+        assertNotNull(em.find(Composition.class, isis));
         isis.setVin(6);
         isis.setVariete("Sémillon");
-        //assertNotNull(em.find(Composition.class, isis));
+        assertNotNull(em.find(Composition.class, isis));
         isis.setVin(7);
         isis.setVariete("Muscadelle");
         assertNotNull(em.find(Composition.class, isis));
